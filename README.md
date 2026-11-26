@@ -67,7 +67,7 @@ At `t = 2000 s` on line 1 with the operator:
 | | semi-submersible | TLP |
 |---|---|---|
 | 0.99-quantile at `H = 5 s` | about 4.8 MN | about 8.5 MN |
-| 0.99-quantile at `H = 600 s` | about 5.6 MN | about 9.6 MN |
+| 0.99-quantile at `H = 600 s` | about 5.6 MN | about 9.5 MN |
 | realised `M(t;600)` | 4.9 MN | 8.2 MN |
 
 The ordering of the six levels and the trend with the horizon are what the figure shows.
@@ -75,7 +75,8 @@ This is a single-instant query, not a redraw of a figure in the paper: it checks
 shipped weights and the shipped case reproduce the magnitudes reported in Section 4.
 
 Absolute values may differ in the second decimal between machines: the LSTM reduction
-order in float32 is not bit-reproducible, and repeated runs differ by about 1 %. That is
+order in float32 is not bit-reproducible, and repeated runs of the same command differ by
+up to 2 % at the longest horizon (9.4 to 9.6 MN for the 0.99 level above). That is
 well inside the model error reported in the paper (RMSE 0.08 MN at a 5 s lead).
 
 ### Two things that are easy to get wrong
